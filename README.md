@@ -16,20 +16,34 @@ You can refer to the dataset [here](http://www.cbsr.ia.ac.cn/users/xiangyuzhu/pr
     <img src="https://github.com/Heba-Atef99/Head_Pose_Estimation/blob/main/images/dataset.jpg">  
 </div>  
 
+# Dependencies
+    Python 3.8.10
+    Pandas
+    CV2
+    mediapipe
+    numpy
+    sklearn
+    joblib
+    moviepy
+    dash
+    dash_canvas
+    dash_bootstrap_components
+
+
 # Solution Pipleline
 <div align="center">
     <img src="https://github.com/Heba-Atef99/Head_Pose_Estimation/blob/main/images/pipeline.png">  
 </div>  
 
 ## 1. Extract Features
-We will use MediaPipe Face Mesh solution to extract the 2D semantic contours of the face.
+We will use MediaPipe Face Mesh solution to extract the 2D semantic contours of the face in order to solve this problem with Machine Learning.
 
 MediaPipe Face Mesh is a solution that estimates 478 3D face landmarks in real-time even on mobile devices. It employs machine learning (ML) to infer the 3D facial surface
 
 You can learn more about mediapipe from [here](https://google.github.io/mediapipe/solutions/face_mesh.html)
 
 ## 2. Normalize The Landmarks
-We bormalize the features by changing its center to be the nose and divide by the largest distance which is between the chin and the forehead.
+We normalize the features by changing its center to be the nose and divide by the largest distance which is between the chin and the forehead.
 
 This will help the features to be invariant with the translation of the face along the picture so that the model would be more robust.
 
@@ -48,3 +62,8 @@ After training multiple models such as (Random Forest, Ridge, Lasso, Decision Tr
 
 ## 4. Draw Axis
 Finally we draw three axis: Pitch, Yaw, and Roll to estimate the head position
+
+## Overview of The Dashboard
+
+https://user-images.githubusercontent.com/54477107/221020919-882d6b37-ffdf-418f-b49c-a428a542fe6d.mp4
+
